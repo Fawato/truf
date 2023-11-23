@@ -80,3 +80,8 @@ jobs:
       uses: github/codeql-action/analyze@v2
       with:
         category: "/language:${{matrix.language}}"
+        
+    - name: Upload scan results
+      uses: actions/upload-artifact@v2
+      with:
+        path: ${{ github.workspace }}
